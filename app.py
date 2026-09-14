@@ -3,7 +3,17 @@ import json
 import re
 import streamlit as st
 from openai import OpenAI
+from dotenv import load_dotenv
 
+
+load_dotenv()
+
+api_key = os.getenv("OPENAI_API_KEY")
+
+if not api_key:
+    raise ValueError("OPENAI_API_KEY is not set")
+
+print("API key loaded:", api_key[:7] + "..." + api_key[-4:])
 # ============================================================
 # AI CODE LAB
 # One-file Streamlit + OpenAI GPT-5.6 Luna demo
@@ -20,13 +30,7 @@ st.set_page_config(
 # OpenAI
 # ------------------------------------------------------------
 
-api_key = os.getenv("OPENAI_API_KEY")
 
-if not api_key:
-    try:
-        api_key = st.secrets["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"]
-    except Exception:
-        api_key = None
 
 if api_key:
     client = OpenAI(api_key=api_key)
@@ -216,7 +220,7 @@ def generate_task(language, difficulty, competency):
 
         input=prompt,
 
-        max_output_tokens=700,
+        max_output_tokens=1500,
 
         text={
             "format": {
@@ -262,7 +266,12 @@ def generate_task(language, difficulty, competency):
         }
     )
 
-    return json.loads(response.output_text)
+    try:
+        return json.loads(response.output_text)
+    except json.JSONDecodeError as e:
+        st.error("OpenAI-ի վերադարձած JSON-ը ամբողջական չէ։")
+        st.code(response.output_text)
+        raise e
 
 
 # ------------------------------------------------------------
@@ -296,7 +305,7 @@ def evaluate_solution(task, explanation, student_code):
     response = client.responses.create(
         model=MODEL,
         input=prompt,
-        max_output_tokens=500,
+        max_output_tokens=800,
 
         text={
             "format": {
