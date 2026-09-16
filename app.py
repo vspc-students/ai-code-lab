@@ -133,7 +133,8 @@ with st.sidebar:
             "Python",
             "JavaScript",
             "C++",
-            "HTML/CSS"
+            "HTML/CSS",
+            "SQL"
         ]
     )
 
@@ -477,6 +478,8 @@ with tab1:
                 if language == "C++"
                 else "html"
                 if language == "HTML/CSS"
+                else "SQL"
+                if language == "SQL"
                 else "python"
             )
         )
