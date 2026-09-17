@@ -56,12 +56,13 @@ footer {visibility: hidden;}
     border-radius: 22px;
     border: 1px solid rgba(128,128,128,.2);
     margin-bottom: 25px;
+    background-color: #F5FBFF;
 }
 
 .hero-title {
     font-size: 42px;
     font-weight: 800;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
 }
 
 .hero-subtitle {
