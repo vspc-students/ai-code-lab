@@ -1,0 +1,7 @@
+streamlit>=1.45
+openai>=1.99
+python-dotenv>=1.0
+pandas>=2.2
+plotly>=6.0
+
+python -m pip install plotly streamlit pandas openai python-dotenv streamlit
