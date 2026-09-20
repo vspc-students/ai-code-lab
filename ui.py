@@ -7,7 +7,6 @@ def inject_css():
         """
 <style>
 
-
 :root {
     --acl-primary: #2F80ED;
     --acl-primary-hover: #1D6FD6;
@@ -50,7 +49,7 @@ footer {visibility: hidden;}
     opacity: .7;
 }
 
-/* Cards / results */
+/* Cards */
 .card {
     padding: 22px;
     border-radius: var(--acl-radius);
@@ -78,23 +77,126 @@ footer {visibility: hidden;}
 textarea {
     font-family: monospace !important;
 }
+/* =================================
+   CURRENT EXPERIMENT SETTINGS
+   ================================= */
 
-/* Buttons — փոխիր այստեղ */
-.stButton > button {
-    border-radius: var(--acl-button-radius);
-    font-weight: 650;
-    transition: all .15s ease;
+.st-key-settings-panel {
+    padding: 0 !important;
+
+    background: #ffffff;
+
+    border: 1px solid var(--acl-border);
+    border-radius: var(--acl-radius);
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-.stButton > button:hover {
-    transform: translateY(-1px);
+
+/* Header */
+
+.st-key-settings-panel .settings-header {
+    padding: 20px 22px;
+
+    background: var(--acl-surface);
+
+    border-bottom: 1px solid var(--acl-border);
 }
 
-/* Primary button — եթե Streamlit-ի DOM-ը փոխվի, այս հատվածը
-   կարելի է վերաձևավորել։ */
-button[kind="primary"] {
-    border-radius: var(--acl-button-radius);
+.st-key-settings-panel .settings-header-title {
+    font-size: 20px;
+    font-weight: 750;
+
+    line-height: 1.3;
+
+    color: #1f2937;
 }
+
+.st-key-settings-panel .settings-header-subtitle {
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+/* Metrics area */
+
+.st-key-settings-panel [data-testid="stMetric"] {
+    margin: 2px 6px !important;
+    padding: 3px 6px !important;
+
+    background: #ffffff;
+
+    border: 1px solid var(--acl-border);
+    border-radius: 12px;
+
+    box-shadow: none;
+}
+
+.st-key-settings-panel [data-testid="stMetricLabel"] {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+
+    color: #6b7280;
+}
+
+.st-key-settings-panel [data-testid="stMetricValue"] {
+    font-size: 21px !important;
+    font-weight: 700 !important;
+
+    color: #1f2937;
+}
+
+
+/* Last metric */
+
+.st-key-settings-panel [data-testid="stMetric"]:last-child {
+    margin-bottom: 6px !important;
+}
+/* =========================
+   BUTTONS
+   ========================= */
+
+div[data-testid="stButton"] > button {
+    width: 100% !important;
+
+    border-radius: var(--acl-button-radius) !important;
+
+    font-weight: 650 !important;
+    transition: all .15s ease !important;
+
+    background-color: var(--acl-primary) !important;
+    color: white !important;
+
+    border: 1px solid var(--acl-primary) !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stButton"] > button:hover {
+    transform: translateY(-1px) !important;
+
+    background-color: var(--acl-primary-hover) !important;
+    color: white !important;
+
+    border-color: var(--acl-primary-hover) !important;
+}
+
+div[data-testid="stButton"] > button:focus {
+    background-color: var(--acl-primary) !important;
+    color: white !important;
+
+    border-color: var(--acl-primary) !important;
+}
+
+div[data-testid="stButton"] > button:active {
+    background-color: var(--acl-primary-hover) !important;
+    color: white !important;
+}
+
 
 /* Sidebar */
 [data-testid="stSidebar"] {
@@ -117,6 +219,7 @@ button[kind="primary"] {
         font-size: 30px;
         margin-bottom: 25px;
     }
+
     .hero {
         padding: 22px;
     }

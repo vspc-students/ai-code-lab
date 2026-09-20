@@ -47,7 +47,7 @@ def render_competency_chart(results):
     if df.empty:
         return
 
-    st.markdown("### 🧠 Կոմպետենտության պրոֆիլ")
+    st.markdown("###  Կոմպետենտության պրոֆիլ")
     st.caption(
         "Մասնակցի հիմնական ծրագրավորման կոմպետենտությունների "
         "միջին գնահատականները՝ 0–100 սանդղակով։"
