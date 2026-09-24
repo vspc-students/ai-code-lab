@@ -222,9 +222,9 @@ with tab1:
             # TASK TITLE
             # ------------------------------------------------
 
-            st.markdown(
-                f"## {task.get('title', 'AI Task')}"
-            )
+            # st.markdown(
+            #     f"## {task.get('title', 'AI Task')}"
+            # )
 
             # ------------------------------------------------
             # TASK DESCRIPTION
@@ -756,10 +756,7 @@ with tab1:
                                     "UNKNOWN",
                                 ),
 
-                                "title": task.get(
-                                    "title",
-                                    "AI Task",
-                                ),
+                                # "title": "Առաջադրանք",
 
                                 "description": task.get(
                                     "description",

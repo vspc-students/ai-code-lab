@@ -401,5 +401,45 @@
       "improvement": "Հեռացրու sort-ը և գտիր առավելագույնը մեկ անցմամբ՝ պահելով 5 թվերի մուտքի նույն ձևը։ Օրինակ՝ օգտագործիր max փոփոխական և յուրաքանչյուր կարդացած թիվ համեմատիր դրա հետ։"
     },
     "expert_evaluation": {}
+  },
+  {
+    "participant_id": "P-7B7EBC",
+    "task_id": "63935951-4030-4a73-8c6d-a2e6dfecaea0",
+    "language": "Python",
+    "difficulty": "Easy / Հեշտ",
+    "competency": "Կոդի ընկալում / Code Understanding",
+    "task": {
+      "task_id": "63935951-4030-4a73-8c6d-a2e6dfecaea0",
+      "description": "Կարդա Python կոդը և պատասխանիր հարցին՝ «Ի՞նչ է անում այս կոդը։»",
+      "code": "numbers = [3, 6, 2, 8]\ntotal = 0\n\nfor number in numbers:\n    if number % 2 == 0:\n        total += number\n\nprint(total)",
+      "requirements": [
+        "Ընտրիր կոդի գործողությունը ճիշտ նկարագրող տարբերակը։",
+        "Հաշվի առ, որ կոդը գումարում է միայն զույգ թվերը։"
+      ],
+      "quiz_options": [
+        "Տպում է ցուցակի բոլոր թվերի գումարը։",
+        "Տպում է միայն զույգ թվերի գումարը։",
+        "Տպում է միայն կենտ թվերի գումարը։",
+        "Տպում է ցուցակի ամենամեծ թիվը։"
+      ],
+      "correct_option_index": 1
+    },
+    "student_solution": {
+      "selected_option": "Տպում է միայն զույգ թվերի գումարը։",
+      "explanation": "",
+      "submitted_code": ""
+    },
+    "evaluation": {
+      "understanding": 100,
+      "problem_detection": 0,
+      "adaptation": 0,
+      "optimization": 0,
+      "clarity": 100,
+      "total": 100,
+      "feedback": "Պատասխանը ճիշտ է․ կոդը գումարում և տպում է միայն զույգ թվերը՝ 6 + 2 + 8 = 16։",
+      "strength": "Ճիշտ է ճանաչել կոդի հիմնական գործողությունը՝ զույգ թվերի գումարումը։",
+      "improvement": "Կարելի էր նաև նշել, որ վերջնական տպվող արդյունքը 16 է։"
+    },
+    "expert_evaluation": {}
   }
 ]
